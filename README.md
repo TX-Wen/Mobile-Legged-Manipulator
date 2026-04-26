@@ -55,4 +55,3 @@
 
 ---
 
-*(Note: The manuscript is currently in preparation for submission to ICRA/IROS. Full deployment code and pre-trained weights will be released upon publication. / 注：本论文正准备投递 ICRA/IROS，完整的部署代码和预训练权重将在论文发表后开源。)*
