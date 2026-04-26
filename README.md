@@ -1,6 +1,6 @@
 
 
-https://github.com/user-attachments/assets/2503520f-d93d-4fca-8de9-a3fb53114afb
+
 
 # Whole-Body Control of a Mobile Legged Manipulator
 ### 移动腿足机械臂的全身控制与多模态感知
