@@ -15,15 +15,27 @@
 
 在 Isaac Gym 环境中，通过“教师-学生”蒸馏架构与 PPO 强化学习算法，实现了机器人在复杂地形下的动作控制与高动态表现。
 
-### 1. Backflip Control (后空翻控制)
+### 1. Whole-Body Target Tracking (全身目标追踪控制)
+Based on the [legged-robots-manipulation](https://github.com/aCodeDog/legged-robots-manipulation) framework, we implemented a robust whole-body controller for the Unitree Go2 + Arm. The policy jointly controls the quadrupedal base and the manipulator to accurately track moving 6D end-effector targets in real-time.
+
+*基于 aCodeDog 的开源框架，我们在 Unitree Go2 + Arm 上实现了稳健的全身控制器。策略能够协同控制腿足底盘与机械臂，实现对 6D 末端执行器目标的实时、精准追踪。*
+
+<p align="center">
+  <img src="assets/target_tracking.gif" width="40%" />
+</p>
+<p align="center">
+  <em>(RL-based whole-body control for end-effector target tracking / 基于强化学习的全身协同目标追踪)</em>
+</p>
+
+### 2. High-Dynamic Backflip (高动态后空翻控制)
 <p align="center">
   <img src="assets/backflip.gif" width="60%" />
 </p>
 
-我们将训练逻辑分解为三个阶段，并设计了相应的事件触发奖励机制：
-- **阶段 1：** 奖励保持稳定站立，为起跳蓄力奠定基础。
-- **阶段 2：** 奖励俯仰角转速与累计翻转角度，同时惩罚滚转/偏航运动以抑制斜向翻转。
-- **阶段 3：** 当翻转角度达到临界值时触发，奖励平稳着陆与姿态恢复（包括机身高度回归与足端稳定接触）。
+我们将后空翻的训练逻辑分解为三个阶段：
+- **阶段 1 (蓄力)：** 奖励保持稳定站立，为起跳蓄力奠定基础。
+- **阶段 2 (腾空)：** 奖励俯仰角转速与累计翻转角度，同时惩罚滚转/偏航运动以抑制斜向翻转。
+- **阶段 3 (落地)：** 当翻转角度达到临界值时触发，奖励平稳着陆与机身姿态恢复。
 
 ---
 
@@ -36,11 +48,8 @@
   <img src="assets/elevator_task.gif" width="60%" />
 </p>
 <p align="center">
-  <em>(执行“按电梯与开门”任务的模仿学习展示)</em>
+  <em>(执行按电梯任务的模仿学习展示)</em>
 </p>
-
-- **Real2Sim & Sim2Real 闭环：** 利用真实世界的少样本数据校准仿真模型，精准复现物理与视觉特性，有效缩小了“真实-仿真”的数据分布差异。
-- **自动化标定：** 实现了自动化的眼在手上（eye-in-hand）标定与数据对齐，确保了从仿真到现实的高保真迁移。
 
 ---
 
