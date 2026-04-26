@@ -13,7 +13,7 @@
 ## 🤸‍♂️ High-Dynamic Locomotion
 **(基于强化学习的高动态运动控制)**
 
-在 Isaac Gym 环境中，通过“教师-学生”蒸馏架构与 PPO 强化学习算法，实现了机器人在复杂地形下的动作控制与高动态表现。
+在 Isaac Gym 环境中，通过“教师-学生”蒸馏架构与 PPO 强化学习算法，实现了机器人动作控制与高动态表现。
 
 ### 1. Whole-Body Target Tracking (全身目标追踪控制)
 Based on the [legged-robots-manipulation](https://github.com/aCodeDog/legged-robots-manipulation) framework, we implemented a robust whole-body controller for the Unitree Go2 + Arm. The policy jointly controls the quadrupedal base and the manipulator to accurately track moving 6D end-effector targets in real-time.
