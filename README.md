@@ -21,7 +21,7 @@ Based on the [legged-robots-manipulation](https://github.com/aCodeDog/legged-rob
 *基于 aCodeDog 的开源框架，我们在 Unitree Go2 + Arm 上实现了稳健的全身控制器。策略能够协同控制腿足底盘与机械臂，实现对 6D 末端执行器目标的实时、精准追踪。*
 
 <p align="center">
-  <img src="assets/target_tracking.gif" width="40%" />
+  <video src="target_3_x264.mp4" autoplay loop muted playsinline width="60%"></video>
 </p>
 <p align="center">
   <em>(RL-based whole-body control for end-effector target tracking / 基于强化学习的全身协同目标追踪)</em>
@@ -29,7 +29,7 @@ Based on the [legged-robots-manipulation](https://github.com/aCodeDog/legged-rob
 
 ### 2. High-Dynamic Backflip (高动态后空翻控制)
 <p align="center">
-  <img src="assets/backflip.gif" width="60%" />
+  <video src="jump.mp4" autoplay loop muted playsinline width="60%"></video>
 </p>
 
 我们将后空翻的训练逻辑分解为三个阶段：
@@ -45,10 +45,11 @@ Based on the [legged-robots-manipulation](https://github.com/aCodeDog/legged-rob
 利用扩散策略（Diffusion Policy）构建了从原始视觉输入到电机指令的端到端映射，使机器人具备执行复杂交互任务的能力。
 
 <p align="center">
-  <img src="assets/elevator_task.gif" width="60%" />
+  <video src="button_real_1_x264.mp4" autoplay loop muted playsinline width="48%"></video>
+  <video src="button_inference.mp4" autoplay loop muted playsinline width="48%"></video>
 </p>
 <p align="center">
-  <em>(执行按电梯任务的模仿学习展示)</em>
+  <em>(Left: Real-world Execution / 左：真实环境按电梯执行画面 &nbsp;&nbsp;&nbsp; Right: Policy Inference / 右：扩散策略推理视角)</em>
 </p>
 
 ---
@@ -63,4 +64,3 @@ Based on the [legged-robots-manipulation](https://github.com/aCodeDog/legged-rob
 该架构将推理延迟从 2.0s 降低至 0.01s 以下，确保了机械臂在动态交互过程中的实时响应。
 
 ---
-
