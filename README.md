@@ -1,7 +1,6 @@
 # Whole-Body Control of a Mobile Legged Manipulator
 ### 移动腿足机械臂的全身控制与多模态感知
 
-![Status](https://img.shields.io/badge/Status-In_Preparation-blue)
 ![Hardware](https://img.shields.io/badge/Hardware-Unitree_Go2_+_Arm-lightgrey)
 
 > **Teaser:** An embodied deployment framework integrating low-level high-dynamic motion control (RL) and high-level multi-modal perception interfaces (Diffusion Policy) for a mobile legged manipulator.
